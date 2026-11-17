@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+<script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>    
+<meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes" />
+    <title>Unity Web Player | Neon Horror Runner</title>
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        overflow: hidden;
+      }
+      #unity-canvas {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+      #diagnostics-icon {
+        position: fixed;
+        bottom: 10px;
+        right: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas
+      id="unity-canvas"
+      width="960"
+      height="600"
+      tabindex="-1"
+      style="background: #231F20"
+    ></canvas>
+    <script src="Build/WebGL_Build_Runner.loader.js"></script>
+    <script>
+            createUnityInstance(document.querySelector("#unity-canvas"), {
+              arguments: [],
+              dataUrl: "Build/WebGL_Build_Runner.data.unityweb",
+              frameworkUrl: "Build/WebGL_Build_Runner.framework.js.unityweb",
+              codeUrl: "Build/WebGL_Build_Runner.wasm.unityweb",
+              streamingAssetsUrl: "StreamingAssets",
+              companyName: "Sfera",
+              productName: "Neon Horror Runner",
+              productVersion: "0.1",
+              // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+              // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+            }).then((unityInstance) => {
+            }).catch((message) => {
+              alert(message);
+            });
+    </script>
+  </body>
+</html>

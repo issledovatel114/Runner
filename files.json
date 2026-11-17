@@ -1,0 +1,6 @@
+{
+  "dataFile": "Build/WebGL_Build_Runner.data.unityweb",
+  "codeFile": "Build/WebGL_Build_Runner.wasm.unityweb",
+  "loaderFile": "Build/WebGL_Build_Runner.loader.js",
+  "frameworkFile": "Build/WebGL_Build_Runner.framework.js.unityweb"
+}
